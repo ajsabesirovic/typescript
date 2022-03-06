@@ -1,3 +1,4 @@
+// PRIMITIVE TYPES
 let age: number = 20;
 age = 15
 
@@ -8,10 +9,10 @@ let isInstructor: boolean;
 
 let hobbies : string[];
 hobbies = ['a','b']
-// let hobbies : boolean[];
-// let hobbies : number[];
+let hobbies : boolean[];
+let hobbies : number[];
 
-// let person: any;
+let person: any;
 
 let person: {
     name: string,
@@ -27,3 +28,9 @@ let people: {
     name: string,
     age: number
 }[];
+
+// TYPE INFERENCE
+let course = 'javascript crash course'
+// course = 2
+
+
