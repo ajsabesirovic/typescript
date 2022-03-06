@@ -34,3 +34,16 @@ let course = 'javascript crash course'
 // course = 2
 
 
+// TYPE UNION
+let kurs : string|number = 'js'
+kurs = 7
+// kurs =[]
+ 
+
+// TYPE ALIAS
+type Person = {
+    name: string;
+    age: number
+}
+
+let pers : Person
