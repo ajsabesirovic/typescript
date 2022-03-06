@@ -47,3 +47,13 @@ type Person = {
 }
 
 let pers : Person
+
+
+//GENERICS
+function insert <T>(array: T[], value: T){
+    const newArr = [value,...array]
+    return newArr;
+};
+
+
+let updatedArr = insert([1,2,3],2)
