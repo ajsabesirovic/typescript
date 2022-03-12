@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Todo from "../models/todo";
 
 type TodosCtxObj = {
-    items: Todo[];
-    addTodo: (text: string) => void;
-    removeTodo: (id: string) => void;
-  }
+  items: Todo[];
+  addTodo: (text: string) => void;
+  removeTodo: (id: string) => void;
+};
 
 export const TodosContext = React.createContext<TodosCtxObj>({
   items: [],
@@ -14,13 +14,12 @@ export const TodosContext = React.createContext<TodosCtxObj>({
 });
 
 const TodosContextProvider: React.FC = (props) => {
-  // useState()
+
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo = (todoText: string) => {
     const newTodo = new Todo(todoText);
     setTodos((prevState) => {
-      // return prevState.concat(newTodo);
       return [...prevState, newTodo];
     });
   };
@@ -31,12 +30,16 @@ const TodosContextProvider: React.FC = (props) => {
     });
   };
 
-  const contextValue:TodosCtxObj = {
-      items: todos,
-      addTodo: addTodo,
-      removeTodo : removeTodo
-  }
-  return <TodosContext.Provider value={contextValue}>{props.children}</TodosContext.Provider>;
+  const contextValue: TodosCtxObj = {
+    items: todos,
+    addTodo: addTodo,
+    removeTodo: removeTodo,
+  };
+  return (
+    <TodosContext.Provider value={contextValue}>
+      {props.children}
+    </TodosContext.Provider>
+  );
 };
 
 export default TodosContextProvider;
