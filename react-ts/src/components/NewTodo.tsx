@@ -8,9 +8,10 @@ const NewTodo:React.FC<{onAddTodo : ( text : string) => void}> = (props) => {
         const enteredText = todoInputRef.current!.value
         if(enteredText?.trim().length === 0){
             //throw an error
-            return 
+            return
         }
     props.onAddTodo(enteredText);    
+    todoInputRef.current!.value = ''
     }
 
   return <form onSubmit={submitHandler}>
