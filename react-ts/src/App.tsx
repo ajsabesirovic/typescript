@@ -8,9 +8,13 @@ function App() {
     new Todo('Learn react'),
     new Todo('Learn ts')
   ]
+  const addTodo = (text : string) => {
+    todos.push(new Todo(text))
+  }
+
   return (
     <div>
-      <NewTodo/>
+      <NewTodo onAddTodo={addTodo}/>
       <Todos items={todos}/>
     </div>
   );
