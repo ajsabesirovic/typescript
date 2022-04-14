@@ -57,3 +57,4 @@ function insert <T>(array: T[], value: T){
 
 
 let updatedArr = insert([1,2,3],2)
+let updatedArr2 = insert(updatedArr,5)
